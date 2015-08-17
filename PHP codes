@@ -1,0 +1,310 @@
+<?php
+   if(!isset($_SESSION))
+   {
+	   session_start();
+   }
+ ?>
+<?php
+	
+	$a=$_POST['p'];
+	$b=$_POST['n'];
+	$c=$_POST['dg'];
+	$d=$_POST['co'];
+	$e=$_POST['us'];
+	$g=$_POST['pw'];
+	
+	$con=mysql_connect("localhost","root");
+	mysql_select_db("crime");
+	$qry="update user set  Name='".$b."',Designation='" .$c."', Contact='".$d."' ,UserId='".$e."', Password='".$g."' where PoliceId='".$a."'";
+	$r=mysql_query($qry);
+	if($r>0)
+		{
+			echo '<script type="text/javascript">
+				alert("User  successfully updated");
+				window.location=\'Index.php\';
+				</script>';
+	}
+    else
+    {
+		echo '<script type="text/javascript">
+				alert("Updation failed.. Try again.");
+				window.location=\'Index.php\';
+				</script>';
+	}
+?>
+
+
+//show all requests
+
+
+<?php 
+if(!isset($_SESSION))
+{
+	session_start();
+}
+?>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<?php include 
+	"Header.php";
+?>
+<?php include 
+	"Navbar.php";
+?>
+<?php include "Left.php";?>
+
+<div id="Firform">
+<h1>Show All Users</h1>
+<table border= 1 width="100%">
+<tr>
+		<th height="32" bgcolor="#BDE0A8">PoliceId</th>
+		<th bgcolor="#BDE0A8">Name</th>
+		<th bgcolor="#BDE0A8">Designation</th>
+		<th bgcolor="#BDE0A8">Contact</th>
+		<th bgcolor="#BDE0A8">UserID</th>
+		<th bgcolor="#BDE0A8">Password</th>
+</tr>
+<?php
+		$con=mysql_connect("localhost","root","");
+		mysql_select_db("crime");
+		$qry="select * from  user";
+		$r=mysql_query($qry);
+		while($f=mysql_fetch_array($r))
+		{
+			$a=$f['PoliceId'];
+			$b=$f['Name'];
+			$c=$f['Designation'];
+			$d=$f['Contact'];
+			$e=$f['UserId'];
+			$g=$f['Password'];
+			
+		?>		
+		    <tr align=center>
+		    <td><?php echo $a; ?></td>
+			<td><?php echo $b; ?></td>
+            <td><?php echo $c; ?></td>
+			<td><?php echo $d; ?></td>
+			<td><?php echo $e; ?></td>
+			<td><?php echo $g; ?></td>
+		   </tr>
+	       
+		<?php
+		} 
+		?>
+		
+</table>
+</div>
+</body>
+</html>
+
+
+//update form
+
+
+
+<?php
+   if(!isset($_SESSION))
+   {
+	   session_start();
+   }
+ ?>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<?php include 
+"Header.php";
+?>
+<?php include 
+"Navbar.php";
+?>
+<?php include 
+"Left.php";
+?>
+<?php
+$p=$_POST['p'];
+$con=mysql_connect("localhost","root");
+mysql_select_db("crime");
+$qry="select * from user where PoliceId='".$p."'";
+$r=mysql_query($qry);
+if($f=mysql_fetch_array($r))
+{
+	$a=$f['PoliceId'];
+	$b=$f['Name'];
+	$c=$f['Designation'];
+	$d=$f['Contact'];
+	$e=$f['UserId'];
+	$g=$f['Password'];
+}
+?>
+
+<div id="Firform">
+<h1>Edit Details</h1>
+<form action="UpdateSuc.php" method="post">
+<table cellspacing="20">
+	<tr>
+		<td>Police Id</td>
+		<?php echo "<td><input type=text name=p  value=".$a." readonly></td>";?>
+	</tr>
+	<tr>
+		<td>Name</td>
+	    <?php echo "<td><input type=text name=n value=".$b."></td>";?>
+	</tr>
+	<tr>
+		<td>Designation</td>
+		<?php echo "<td><input type=text name=dg value=".$c."></td>";?>
+	</tr>
+	<tr>
+		<td>Contact</td>
+		<?php echo "<td><input type=text name=co value=".$d."></td>";?>
+	</tr>
+	<tr>
+		<td>UserId</td>
+	    <?php  echo "<td><input type=text name=us value=".$e."></td>";?>
+	</tr>
+	<tr>
+		<td>Password</td>
+		<?php echo "<td><input type=text name=pw  value=".$g."></td>";?>
+	</tr>
+	<tr>
+	  <td colspan="2" align="right"><input type="submit" name="button" value="Update"></td>
+	</tr>
+</table>	
+</form>
+</div>
+</body>
+</html>
+
+
+
+//add police name
+
+<?php
+   if(!isset($_SESSION))
+   {
+	   session_start();
+   }
+ ?>
+<?php
+	$p=$_POST['p'];
+	$nam=$_POST['nam'];
+	$des=$_POST['des'];
+	$cn=$_POST['cn'];
+	$u=$_POST['u'];
+	$pas=$_POST['pas'];
+	$con=mysql_connect("localhost","root");
+	mysql_select_db("crime");
+	$qry="insert into user values('".$p."','".$nam."','".$des."','".$cn."','".$u."','".$pas."')";
+	$r=mysql_query($qry);
+	if($r>0)
+	{
+		echo '<script type="text/javascript">
+				alert("User successfully added");
+				window.location=\'Index.php\';
+				</script>';
+	}
+    else
+    {
+		echo '<script type="text/javascript">
+				alert("operation failed.. Try again.");
+				window.location=\'Index.php\';
+				</script>';
+	}
+	?>
+		
+		//view fir status
+		
+		
+		<?php
+	
+		$firno=$_POST['firno'];
+		$con=mysql_connect("localhost","root","");
+		mysql_select_db("crime");
+		$qry="select * from  firstatus where Fir_no=".$firno;
+		$r=mysql_query($qry);
+		if($f=mysql_fetch_array($r))
+		{
+			$a=$f['Officer'];
+			$b=$f['Status'];
+		}	
+		else
+		{
+			echo '<script type="text/javascript">
+				alert("Status is not set for this FIR Number.");
+				window.location=\'ViewFirStatus.php\';
+			</script>';
+		}
+		$con=mysql_connect("localhost","root","");
+		mysql_select_db("crime");
+		$qry="select * from  police where Name='".$a."'";
+		$r=mysql_query($qry);
+		if($f=mysql_fetch_array($r))
+		{
+			$mobile=$f['Contact'];
+		}
+					
+?>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<div id="wrapper">
+<body>
+
+<?php include 
+	"Header.php";
+?>
+<?php include 
+	"Navbar.php";
+?>
+<?php include "Login.php";?>
+<table border=1 cellspacing=5>
+<tr>
+		<th bgcolor="#BDE0A8" colspan="2">FIR Status</th>
+		
+</tr>	
+<tr bgcolor=yellow>
+		<td>FIR Number</td>
+		<td><?php echo $firno;?></td>
+</tr>	
+<tr>
+		<td>Investigating Officer</td>
+		<td><?php echo $a;?></td>
+</tr>	
+<tr>
+		<td>Status</td>
+		<td><?php echo $b;?></td>
+</tr>	
+<tr>
+		<td>Contact <?php echo $a; ?></td>
+		<td><?php echo $mobile;?></td>
+</tr>	
+</table>
+</body>
+</html>
+
+
+
+
+// request insert
+
+<?php
+        $cd=$_POST['cd'];
+        $date=$_POST['date'];
+	$na=$_POST['na'];
+	$cn=$_POST['cn'];
+	$em=$_POST['em'];
+	$con=mysql_connect("localhost","root","");
+	mysql_select_db("crime");
+   $query="insert into report values('".$cd."','".$date."','".$na."','".$cn."','".$em."')";
+	$r=mysql_query($query);
+	echo '<script type="text/javascript">
+	alert(" Your request is sent.You will soon receive an reply from us");
+	window.location=\'Index.php\';</script>';
+?>
+
+	
