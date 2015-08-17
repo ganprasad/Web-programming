@@ -1,0 +1,177 @@
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<div class="container">
+<ul id="navCircle">
+  <li><a href="Index.php">Home</a></li>
+  <li><a href="Request.php">Report A Crime</a></li>
+  <li><a href="">Helpline </a></li>
+  <li><a href="Contact.php">Contact Us</a></li>
+  <li><a href="#">Criminal List</a>
+  <ul>
+      <li><a href="">Wanted Criminals</a></li>
+      <li><a href="">Most Wanted</a></li>
+  </ul>
+  </li> 
+</ul>
+</div>
+
+
+//Login code
+<link rel="stylesheet" type="text/css" href="style.css">
+<div id="login">
+<form action="LoginSuc.php" method="post" >
+<table  bgcolor="#003B93" height="30%" align="right" style="color:yellow">
+	<tr>
+		<th>Login </th>
+	</tr>
+	<tr>
+		<td>Username</td>
+	</tr>
+	<tr>
+		<td><input type="text" name="u" required></td>
+	</tr>
+	<tr>
+		<td>Password</td>
+	</tr>
+	<tr>
+		<td><input type="password" name="p" id="pa" required></td>
+	</tr>
+	<tr>
+		<td>User Type</td>
+	</tr>
+	<tr>
+		<td><input type="radio" name="type" value="Admin" id="a">Admin</td>
+	</tr>
+	<tr>
+		<td><input type="radio" name="type" value="User" id="u">User</td>
+	</tr>
+	<tr>
+		<td align="center" height="50"><input type="submit" name="button" value="Log In" id="l"></td>
+	</tr>
+	
+</table>
+</form>
+</div>
+
+
+//see fir status
+
+
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<div id="wrapper">
+<body>
+
+<?php include 
+	"Header.php";
+?>
+<?php include 
+	"Navbar.php";
+?>
+<?php include "Login.php";?>
+<h1>See the Current Status of Your FIR</h1><br>
+
+<form action="ViewFirStatusSuc.php" method="post">
+<table cellspacing="20" cellpadding="8">
+	<tr>
+		<td>Enter FIR Number</td>
+		<td><input type="text" name="firno"></td>
+	</tr>
+	<tr>
+		<td colspan="2" align="right"><input type="submit" value="Show"></td>
+	</tr>
+	
+</table>
+
+</form>
+</body>
+</div>
+</html>
+
+
+//criminal form
+
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<?php include "Header.php";
+?>
+<?php include "Navbar.php";
+?>
+<?php include "Login.php";
+?>
+<h1>Enter the details of Suspect</h1>
+<form action="ViewSuspect.php" method="POST">
+<table cellspacing="20" cellpadding="8">
+    <tr>
+       <td>Enter complexion</td>
+	   <td><input type="text"  name="comp"></td>
+	</tr>
+	<tr>
+	   <td>Enter Dress details</td>
+	   <td><input type="text"  name="dr"></td>
+	</tr>
+	<tr>
+		<td colspan="2" align="right"><input type="submit" value="Show"></td>
+	</tr>
+</table>
+</form>
+</body>
+</html>
+
+
+//contact form
+
+
+
+<link rel="stylesheet" type="text/css" href="style.css">
+
+
+<body>
+<?php include "Header.php";
+?>
+<?php include "Navbar.php";
+?>
+<?php include 
+"Login.php";
+?>
+<h1>Contact Us</h1><br>
+<p>There are many situations where the police can only do their job with the help and co-operation of members of the public who provide vital clues and evidence. Maybe you can help us trace known suspects, find people who are missing, or provide information about one of a number of high priority cases. </p>
+<p>Visitors are welcome to visit Kolkata Police Head Quarters(Lalbazar) for any sorts of query related to Police. They may contact (Enquiry section at the Main Entrance Gate) to be guided to the appropriate department.
+<p>In such circumstances please contact your local Police Station or sent us an e-mail.</p>
+<h3>Talk to Us (Toll free numbers)</h3>
+<ul>
+	<li>Dial 100 - for Emergency</li>
+	<li>1090 - to give any information to police</li>
+	<li>Dial 1073 - for Traffic related issue</li>
+</ul>	
+<h4>Kolkata Police Head Quarters</h4>
+<ul>
+	<li>18,Lalbazar Street,Kolkata - 700 001</li>
+	<li>West Bengal,India</li>
+	<li>EPABX Number:(91-33)2250-5000</li>
+</ul>
+<p>Control Rooms of Kolkata Police</p><br>
+<table>
+<tr>
+	<td>Lalbazar Control Room:</td>
+	<td>(91-33)2214-3024/2214-3230/2214-1310</td>
+</tr>
+<tr>
+	<td colspan="2"><center>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp(91-33)2214-5512[Fax]</center></td>
+</tr>	
+<tr>
+		<td height=50px>Traffic Control Room: </td>
+		<td>(91-33)2214-3644/2242-7248</td>
+</tr>		
+</table>
+</body>
+	
+//
+
+
+
