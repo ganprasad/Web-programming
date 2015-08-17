@@ -1,0 +1,94 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+<?php include 
+"Header.php";
+?>
+<?php include 
+"Left.php";
+?>
+<div id="Firform">
+<h1>Add User</h1><br>
+<form action="AddSuc.php" method="post">
+<table cellspacing="20">
+	<tr>
+		<td>Police Id</td>
+		<td><input type="text" name="p"></td>
+	</tr>
+	<tr>
+		<td>Name</td>
+		<td><input type="text" name="nam"></td>
+	</tr>
+	<tr>
+		<td>Designation</td>
+		<td><select name="des"><option value="Inspector">Inspector</option><option value="SubInspector">SubInspector</option></td>
+	</tr>
+
+		<td>Contact Number</td>
+		<td><input type="text" name="cn"></td>
+	</tr>
+	<tr>
+		<td>UserId</td>
+		<td><input type="text" name="u"></td>
+	</tr>
+		<tr>
+		<td>Password</td>
+		<td><input type="text" name="pas"></td>
+	</tr>
+	<tr>
+		<td colspan="3" align="right"><input type="submit" name="button" value="Add"></td>
+	</tr>
+</table>
+</form>
+</div>
+</body>
+</html>
+
+
+
+//update form
+
+
+<?php
+   if(!isset($_SESSION))
+   {
+	   session_start();
+   }
+ ?>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+<?php include 
+"Header.php";
+?>
+<?php include 
+"Navbar.php";
+?>
+<?php include 
+"Left.php";
+?>
+<div id="Firform">
+<h1>Edit User</h1><br>
+<form action="UpdateForm.php" method="post">
+<table cellspacing="20">
+	<tr>
+		<td> Enter Police Id</td>
+		<td><input type="text" name="p"></td>
+	</tr>
+	<tr>
+		<td colspan="2" align="right"><input type="submit" name="button" value="Search"></td>
+	</tr>
+</table>	
+</form>
+</div>
+</body>
+</html>
+
+
+//
