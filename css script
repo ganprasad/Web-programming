@@ -1,0 +1,183 @@
+body
+{
+margin : 0;
+padding : 0;
+text-align : left;
+font : 75% "Trebuchet MS", verdana, arial, sans-serif;
+line-height : 1.5em;
+background :silver ;
+}
+#wrapper 
+{
+position : relative;
+width : 1000px;
+margin-right : auto;
+margin-left : auto;
+margin-top : 10px;
+margin-bottom : 10px;
+background :yellow;
+}
+
+
+.container 
+{
+width : 1000px;
+height : 35px;
+/*margin : 20px 0 10px 5px;*/
+background-color:#003B93;
+/*color:yellow;*/
+}
+#navCircle 
+{
+margin : 0;
+padding : 0 0 20px 20px;
+
+}
+#navCircle li 
+{
+/*margin : 0;
+padding : 0;*/
+display : inline;
+/*list-style-type : none;*/
+/*margin-top:20px;*/
+}
+#navCircle a:link, #navCircle a:visited 
+{
+float : left;
+font-size : 1.3em;
+padding : 0 25px 15px 25px;
+text-decoration : none;
+/*background : inherit;*/
+color:white;
+margin-top:5px;
+}
+#navCircle a:active, #navCircle a:hover 
+{
+/*background-color : inherit;*/
+color : yellow;
+
+text-decoration:underline;
+
+}
+#ShowFir
+{
+margin-left : 270px;
+margin-top : -120px;
+}
+#ShowFirRequest
+{
+margin-left : 270px;
+margin-top : -100px;
+}
+#Firsearch
+{
+margin-right : 100px;
+margin-top : -180px;
+
+}
+#Firform
+{
+margin-left : 270px;
+margin-right : 100px;
+margin-top : -160px;
+}
+
+
+
+
+.menu
+{ 
+
+list-style:none;
+}
+.menu li
+{ 
+
+padding:1px 0 3px 0; 
+line-height:25px;   
+margin-left:-20px;
+ margin-bottom:1px;
+margin-right:750px;
+ border-bottom:1px solid #E9E9E9;
+border-left:1px solid #E9E9E9;
+border-right:1px solid #E9E9E9;
+ font-weight:bold;
+}
+.menu li a
+{
+
+ color:#5C5C5C;
+ font-size:15px;
+padding:0 0 0 22px;
+ text-decoration:none; 
+font-family:Arial, Helvetica, sans-serif;
+}
+.menu li a:hover
+{ 
+	color:#003B93;  
+	font-weight:bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    
+}
+
+li {
+    float: left;
+}
+
+a:link, a:visited 
+{
+    display: block;
+    width: 183px;
+    font-weight: bold;
+	
+    color: white;
+    background-color: rgb(155,0,78);
+    text-align: left;
+    padding: 5px ;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+a:hover, a:active 
+{
+	color: rgb(112,112,112);
+    
+}
+*/
